@@ -23,6 +23,14 @@ class SurrogateModel:
         :param df: the dataframe with performances
         :return: Does not return anything, but stores the trained model in self.model
         """
+        final_anchor = df['anchor_size'].max()
+        print(final_anchor)
+        df = df[df['anchor_size'] == final_anchor]
+        df.drop('anchor_size', axis=1, inplace=True)
+        X = df.drop('score', axis=1)
+        y = df['score']
+        print(X.shape)
+        print(y)
         raise NotImplementedError()
 
     def predict(self, theta_new):
