@@ -1,11 +1,14 @@
 import ConfigSpace
 
 import sklearn.impute
+from sklearn.compose import ColumnTransformer
+from sklearn.impute import SimpleImputer
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.pipeline import Pipeline
 import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
 
 
 class SurrogateModel:
@@ -23,20 +26,31 @@ class SurrogateModel:
         :param df: the dataframe with performances
         :return: Does not return anything, but stores the trained model in self.model
         """
+        final_anchor = df['anchor_size'].max()
+        df_final = df.loc[df["anchor_size"] == final_anchor].copy()
+        y = df_final["score"].to_numpy()
+        X = df_final.drop(columns=["score", "anchor_size"])
 
-        self.df = df
-        final_anchor = self.df['anchor_size'].max()
-        print(final_anchor)
-        self.df = df[self.df['anchor_size'] == final_anchor]
-        self.df.drop('anchor_size', axis=1, inplace=True)
-        X = self.df.drop('score', axis=1)
-        y = self.df['score']
-        print(X.shape)
-        print(y)
+        category_columns = ["metric", "pp@cat_encoder", "pp@decomposition", "pp@featuregen", "pp@featureselector", "pp@scaler", "weights", "pp@kernel_pca_kernel", "pp@std_with_std"]
+        numerical_cols = [c for c in X.columns if c not in category_columns]
+
+        preprocessor = ColumnTransformer(
+            transformers=[
+                ("cat", OneHotEncoder(handle_unknown="ignore"), category_columns),
+                ("num", SimpleImputer(strategy="median"), numerical_cols),
+            ],
+            remainder="drop",
+        )
+
         self.model = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
                                            max_features=0.5, bootstrap=True, oob_score=True, n_jobs=-1,
                                            random_state=0) if self.model is None else self.model
-        self.model.fit(X, y)
+
+        pipeline = Pipeline([
+            ("preprocessor", preprocessor),
+            ("model", self.model)
+        ])
+        pipeline.fit(X, y)
 
     def predict(self, theta_new):
         """
