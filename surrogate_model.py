@@ -23,15 +23,20 @@ class SurrogateModel:
         :param df: the dataframe with performances
         :return: Does not return anything, but stores the trained model in self.model
         """
-        final_anchor = df['anchor_size'].max()
+
+        self.df = df
+        final_anchor = self.df['anchor_size'].max()
         print(final_anchor)
-        df = df[df['anchor_size'] == final_anchor]
-        df.drop('anchor_size', axis=1, inplace=True)
-        X = df.drop('score', axis=1)
-        y = df['score']
+        self.df = df[self.df['anchor_size'] == final_anchor]
+        self.df.drop('anchor_size', axis=1, inplace=True)
+        X = self.df.drop('score', axis=1)
+        y = self.df['score']
         print(X.shape)
         print(y)
-        raise NotImplementedError()
+        self.model = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
+                                           max_features=0.5, bootstrap=True, oob_score=True, n_jobs=-1,
+                                           random_state=0) if self.model is None else self.model
+        self.model.fit(X, y)
 
     def predict(self, theta_new):
         """
