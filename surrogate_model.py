@@ -1,5 +1,4 @@
 import ConfigSpace
-import numpy as np
 
 import sklearn.impute
 from sklearn.compose import ColumnTransformer
@@ -34,35 +33,35 @@ class SurrogateModel:
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+
+        for x in range(len(self.config_space.get_hyperparameters())):
+            print(x+1, end="\t")
+            print(self.config_space.get_hyperparameter_by_idx(x))
+
         category_columns = ["metric", "pp@cat_encoder", "pp@decomposition", "pp@featuregen", "pp@featureselector",
                             "pp@scaler", "weights", "pp@kernel_pca_kernel", "pp@std_with_std"]
         numerical_cols = [c for c in X.columns if c not in category_columns]
 
         preprocessor = ColumnTransformer(
             transformers=[
-                ("cat", Pipeline([
-                    ("impute", SimpleImputer(strategy="most_frequent")),
-                    ("ohe", OneHotEncoder(handle_unknown="ignore"))
-                ]), category_columns),
+                ("cat", OneHotEncoder(handle_unknown="ignore"), category_columns),
                 ("num", SimpleImputer(strategy="median"), numerical_cols),
             ],
             remainder="drop",
         )
 
-        rf = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
-                                   max_features=0.5, bootstrap=True, n_jobs=-1,
-                                   random_state=0)
+        self.model = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
+                                           max_features=0.5, bootstrap=True, n_jobs=-1,
+                                           random_state=0) if self.model is None else self.model
 
-        self.model = Pipeline([
+        pipeline = Pipeline([
             ("preprocessor", preprocessor),
-            ("model", rf)
+            ("model", self.model)
         ])
-        self.model.fit(X_train, y_train)
-        y_pred = self.model.predict(X_test)
-        self.trained_cols = list(X.columns)
+        pipeline.fit(X_train, y_train)
+        print(pipeline.score(X_test, y_test))
 
-
-        print(self.model.score(X_test, y_test))
+        y_pred = pipeline.predict(X_test)
         print(mean_squared_error(y_pred, y_test))
         print(r2_score(y_pred, y_test))
 
@@ -73,15 +72,8 @@ class SurrogateModel:
         :param theta_new: a dict, where each key represents the hyperparameter (or anchor)
         :return: float, the predicted performance of theta new (which can be considered the ground truth)
         """
-
-        X_new = pd.DataFrame([theta_new])
-        if "anchor_size" in X_new.columns:
-            X_new = X_new.drop(columns=["anchor_size"])
-
-        for trained_col in self.trained_cols:
-            if trained_col not in X_new.columns:
-                X_new[trained_col] = np.nan
-
-        X_new = X_new[self.trained_cols]
-        prediction = self.model.predict(X_new)[0]
-        return float(prediction)
+        df = pd.DataFrame(theta_new, index=[0])
+        print(f"theta columns:")
+        for i, x in enumerate(df.columns):
+            print(i, x)
+        raise NotImplementedError()
