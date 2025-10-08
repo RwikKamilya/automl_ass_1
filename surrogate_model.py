@@ -1,4 +1,5 @@
 import ConfigSpace
+import numpy as np
 
 import sklearn.impute
 from sklearn.compose import ColumnTransformer
@@ -39,24 +40,29 @@ class SurrogateModel:
 
         preprocessor = ColumnTransformer(
             transformers=[
-                ("cat", OneHotEncoder(handle_unknown="ignore"), category_columns),
+                ("cat", Pipeline([
+                    ("impute", SimpleImputer(strategy="most_frequent")),
+                    ("ohe", OneHotEncoder(handle_unknown="ignore"))
+                ]), category_columns),
                 ("num", SimpleImputer(strategy="median"), numerical_cols),
             ],
             remainder="drop",
         )
 
-        self.model = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
-                                           max_features=0.5, bootstrap=True, n_jobs=-1,
-                                           random_state=0) if self.model is None else self.model
+        rf = RandomForestRegressor(n_estimators=300, max_depth=None, min_samples_split=4, min_samples_leaf=2,
+                                   max_features=0.5, bootstrap=True, n_jobs=-1,
+                                   random_state=0)
 
-        pipeline = Pipeline([
+        self.model = Pipeline([
             ("preprocessor", preprocessor),
-            ("model", self.model)
+            ("model", rf)
         ])
-        pipeline.fit(X_train, y_train)
-        print(pipeline.score(X_test, y_test))
+        self.model.fit(X_train, y_train)
+        y_pred = self.model.predict(X_test)
+        self.trained_cols = list(X.columns)
 
-        y_pred = pipeline.predict(X_test)
+
+        print(self.model.score(X_test, y_test))
         print(mean_squared_error(y_pred, y_test))
         print(r2_score(y_pred, y_test))
 
@@ -67,4 +73,15 @@ class SurrogateModel:
         :param theta_new: a dict, where each key represents the hyperparameter (or anchor)
         :return: float, the predicted performance of theta new (which can be considered the ground truth)
         """
-        raise NotImplementedError()
+
+        X_new = pd.DataFrame([theta_new])
+        if "anchor_size" in X_new.columns:
+            X_new = X_new.drop(columns=["anchor_size"])
+
+        for trained_col in self.trained_cols:
+            if trained_col not in X_new.columns:
+                X_new[trained_col] = np.nan
+
+        X_new = X_new[self.trained_cols]
+        prediction = self.model.predict(X_new)[0]
+        return float(prediction)
