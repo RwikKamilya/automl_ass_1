@@ -6,7 +6,7 @@ from typing import List, Tuple, Dict
 
 import pandas as pd
 from ConfigSpace import Configuration, UniformIntegerHyperparameter, UniformFloatHyperparameter, \
-    CategoricalHyperparameter, Constant, OrdinalHyperparameter
+    CategoricalHyperparameter, Constant
 from scipy.stats import norm
 from sklearn.compose import ColumnTransformer
 from sklearn.gaussian_process import GaussianProcessRegressor

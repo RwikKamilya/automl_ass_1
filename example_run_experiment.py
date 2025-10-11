@@ -12,7 +12,7 @@ def parse_args():
     parser.add_argument('--configurations_performance_file', type=str, default='lcdb_configs.csv')
     # max_anchor_size: connected to the configurations_performance_file. The max value upon which anchors are sampled
     parser.add_argument('--max_anchor_size', type=int, default=1600)
-    parser.add_argument('--num_iterations', type=int, default=500)
+    parser.add_argument('--num_iterations', type=int, default=50)
 
     return parser.parse_args()
 
@@ -176,7 +176,7 @@ def run(args):
     plt.plot(range(len(results["BO_small"])), results["BO_small"], label="BO (Small-init)")
     plt.yscale("log")
     plt.xlabel("Iteration")
-    plt.ylabel("Best score so far (lower = better)")
+    plt.ylabel("Best score so far")
     plt.title(f"RS vs BO — Full-init vs Small-init (anchor_size={args.max_anchor_size})")
     plt.legend()
     plt.show()

@@ -1,0 +1,276 @@
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/bin/python /Users/rwikkamilya/MSc/AutoML/automl_ass_1/example_run_experiment.py --max_anchor_size 16000 --configurations_performance_file config-performances/config_performances_dataset-6.csv
+2025-10-11 17:43:03,282 | INFO | ConfigSpace JSON: lcdb_config_space_knn.json
+2025-10-11 17:43:03,282 | INFO | Perf CSV: config-performances/config_performances_dataset-6.csv
+2025-10-11 17:43:03,282 | INFO | Params: max_anchor_size=16000 | num_iters=50
+0.9994766667754197
+5.4171749882738275e-05
+0.9994713953025756
+2025-10-11 17:43:36,982 | INFO | [Full-init] Using 663 known (config, perf) pairs to initialize BO.
+2025-10-11 17:43:40,442 | INFO | [Full-init] BO incumbent after init: 0.039430
+2025-10-11 17:43:40,443 | INFO | [Full-init] Running 5 comparison epochs (RS vs BO).
+2025-10-11 17:43:40,490 | INFO | [Full-init|RS ] iter=  1 | perf=0.081135 | best=0.081135
+2025-10-11 17:43:44,449 | INFO | [Full-init|BO ] iter=  1 | perf=0.043210 | best=0.039430
+2025-10-11 17:43:44,493 | INFO | [Full-init|RS ] iter=  2 | perf=0.102786 | best=0.081135
+2025-10-11 17:43:47,989 | INFO | [Full-init|BO ] iter=  2 | perf=0.042572 | best=0.039430
+2025-10-11 17:43:48,035 | INFO | [Full-init|RS ] iter=  3 | perf=0.072655 | best=0.072655
+2025-10-11 17:43:51,611 | INFO | [Full-init|BO ] iter=  3 | perf=0.044308 | best=0.039430
+2025-10-11 17:43:51,670 | INFO | [Full-init|RS ] iter=  4 | perf=0.043142 | best=0.043142
+2025-10-11 17:43:56,043 | INFO | [Full-init|BO ] iter=  4 | perf=0.043537 | best=0.039430
+2025-10-11 17:43:56,101 | INFO | [Full-init|RS ] iter=  5 | perf=0.059200 | best=0.043142
+2025-10-11 17:44:01,469 | INFO | [Full-init|BO ] iter=  5 | perf=0.044362 | best=0.039430
+2025-10-11 17:44:01,469 | INFO | [Full-init] First converge epoch: RS=None | BO=6
+2025-10-11 17:44:01,530 | INFO | [Small-init|BO warmup] i=  1 | perf=0.071711 | best=0.071711
+2025-10-11 17:44:01,589 | INFO | [Small-init|BO warmup] i=  2 | perf=0.077080 | best=0.071711
+2025-10-11 17:44:01,649 | INFO | [Small-init|BO warmup] i=  3 | perf=0.058678 | best=0.058678
+2025-10-11 17:44:01,712 | INFO | [Small-init|BO warmup] i=  4 | perf=0.049901 | best=0.049901
+2025-10-11 17:44:01,778 | INFO | [Small-init|BO warmup] i=  5 | perf=0.047013 | best=0.047013
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+2025-10-11 17:44:01,850 | INFO | [Small-init] BO seeded with 5 random points.
+2025-10-11 17:44:01,914 | INFO | [Small-init|RS ] iter=  1 | perf=0.056736 | best=0.056736
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:02,374 | INFO | [Small-init|BO ] iter=  1 | perf=0.053827 | best=0.047013
+2025-10-11 17:44:02,431 | INFO | [Small-init|RS ] iter=  2 | perf=0.050756 | best=0.050756
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+2025-10-11 17:44:02,882 | INFO | [Small-init|BO ] iter=  2 | perf=0.042432 | best=0.042432
+2025-10-11 17:44:02,939 | INFO | [Small-init|RS ] iter=  3 | perf=0.112045 | best=0.050756
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:03,326 | INFO | [Small-init|BO ] iter=  3 | perf=0.044162 | best=0.042432
+2025-10-11 17:44:03,368 | INFO | [Small-init|RS ] iter=  4 | perf=0.045831 | best=0.045831
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:03,752 | INFO | [Small-init|BO ] iter=  4 | perf=0.043259 | best=0.042432
+2025-10-11 17:44:03,797 | INFO | [Small-init|RS ] iter=  5 | perf=0.050177 | best=0.045831
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:04,205 | INFO | [Small-init|BO ] iter=  5 | perf=0.042156 | best=0.042156
+2025-10-11 17:44:04,266 | INFO | [Small-init|RS ] iter=  6 | perf=0.045138 | best=0.045138
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:04,649 | INFO | [Small-init|BO ] iter=  6 | perf=0.041810 | best=0.041810
+2025-10-11 17:44:04,695 | INFO | [Small-init|RS ] iter=  7 | perf=0.043514 | best=0.043514
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:05,089 | INFO | [Small-init|BO ] iter=  7 | perf=0.045691 | best=0.041810
+2025-10-11 17:44:05,142 | INFO | [Small-init|RS ] iter=  8 | perf=0.044568 | best=0.043514
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:05,529 | INFO | [Small-init|BO ] iter=  8 | perf=0.044387 | best=0.041810
+2025-10-11 17:44:05,574 | INFO | [Small-init|RS ] iter=  9 | perf=0.043918 | best=0.043514
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:05,978 | INFO | [Small-init|BO ] iter=  9 | perf=0.044605 | best=0.041810
+2025-10-11 17:44:06,021 | INFO | [Small-init|RS ] iter= 10 | perf=0.099540 | best=0.043514
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:06,401 | INFO | [Small-init|BO ] iter= 10 | perf=0.042873 | best=0.041810
+2025-10-11 17:44:06,442 | INFO | [Small-init|RS ] iter= 11 | perf=0.063798 | best=0.043514
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:06,822 | INFO | [Small-init|BO ] iter= 11 | perf=0.162354 | best=0.041810
+2025-10-11 17:44:06,867 | INFO | [Small-init|RS ] iter= 12 | perf=0.042620 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:07,280 | INFO | [Small-init|BO ] iter= 12 | perf=0.043150 | best=0.041810
+2025-10-11 17:44:07,322 | INFO | [Small-init|RS ] iter= 13 | perf=0.044694 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:07,772 | INFO | [Small-init|BO ] iter= 13 | perf=0.042218 | best=0.041810
+2025-10-11 17:44:07,831 | INFO | [Small-init|RS ] iter= 14 | perf=0.155735 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/impute/_base.py:653: UserWarning: Skipping features without any observed values: ['pp@kernel_pca_n_components']. At least one non-missing value is needed for imputation with strategy='median'.
+  warnings.warn(
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:08,276 | INFO | [Small-init|BO ] iter= 14 | perf=0.045924 | best=0.041810
+2025-10-11 17:44:08,323 | INFO | [Small-init|RS ] iter= 15 | perf=0.052980 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:08,696 | INFO | [Small-init|BO ] iter= 15 | perf=0.042756 | best=0.041810
+2025-10-11 17:44:08,743 | INFO | [Small-init|RS ] iter= 16 | perf=0.071247 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:09,119 | INFO | [Small-init|BO ] iter= 16 | perf=0.043048 | best=0.041810
+2025-10-11 17:44:09,164 | INFO | [Small-init|RS ] iter= 17 | perf=0.044162 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:09,530 | INFO | [Small-init|BO ] iter= 17 | perf=0.041166 | best=0.041166
+2025-10-11 17:44:09,572 | INFO | [Small-init|RS ] iter= 18 | perf=0.045622 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:09,936 | INFO | [Small-init|BO ] iter= 18 | perf=0.045100 | best=0.041166
+2025-10-11 17:44:09,980 | INFO | [Small-init|RS ] iter= 19 | perf=0.043974 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:10,351 | INFO | [Small-init|BO ] iter= 19 | perf=0.041465 | best=0.041166
+2025-10-11 17:44:10,399 | INFO | [Small-init|RS ] iter= 20 | perf=0.053546 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:10,777 | INFO | [Small-init|BO ] iter= 20 | perf=0.044208 | best=0.041166
+2025-10-11 17:44:10,821 | INFO | [Small-init|RS ] iter= 21 | perf=0.053253 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:11,195 | INFO | [Small-init|BO ] iter= 21 | perf=0.044271 | best=0.041166
+2025-10-11 17:44:11,242 | INFO | [Small-init|RS ] iter= 22 | perf=0.064808 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:11,615 | INFO | [Small-init|BO ] iter= 22 | perf=0.043348 | best=0.041166
+2025-10-11 17:44:11,657 | INFO | [Small-init|RS ] iter= 23 | perf=0.050941 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:12,054 | INFO | [Small-init|BO ] iter= 23 | perf=0.045007 | best=0.041166
+2025-10-11 17:44:12,099 | INFO | [Small-init|RS ] iter= 24 | perf=0.044656 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:12,525 | INFO | [Small-init|BO ] iter= 24 | perf=0.042004 | best=0.041166
+2025-10-11 17:44:12,567 | INFO | [Small-init|RS ] iter= 25 | perf=0.061946 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:12,978 | INFO | [Small-init|BO ] iter= 25 | perf=0.042405 | best=0.041166
+2025-10-11 17:44:13,024 | INFO | [Small-init|RS ] iter= 26 | perf=0.113685 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:13,417 | INFO | [Small-init|BO ] iter= 26 | perf=0.050700 | best=0.041166
+2025-10-11 17:44:13,460 | INFO | [Small-init|RS ] iter= 27 | perf=0.069218 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:13,851 | INFO | [Small-init|BO ] iter= 27 | perf=0.042963 | best=0.041166
+2025-10-11 17:44:13,897 | INFO | [Small-init|RS ] iter= 28 | perf=0.043829 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:14,294 | INFO | [Small-init|BO ] iter= 28 | perf=0.042012 | best=0.041166
+2025-10-11 17:44:14,340 | INFO | [Small-init|RS ] iter= 29 | perf=0.045993 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:14,771 | INFO | [Small-init|BO ] iter= 29 | perf=0.041562 | best=0.041166
+2025-10-11 17:44:14,818 | INFO | [Small-init|RS ] iter= 30 | perf=0.043414 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:15,193 | INFO | [Small-init|BO ] iter= 30 | perf=0.042868 | best=0.041166
+2025-10-11 17:44:15,235 | INFO | [Small-init|RS ] iter= 31 | perf=0.055782 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:15,619 | INFO | [Small-init|BO ] iter= 31 | perf=0.045877 | best=0.041166
+2025-10-11 17:44:15,663 | INFO | [Small-init|RS ] iter= 32 | perf=0.061227 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:16,062 | INFO | [Small-init|BO ] iter= 32 | perf=0.041690 | best=0.041166
+2025-10-11 17:44:16,105 | INFO | [Small-init|RS ] iter= 33 | perf=0.049297 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:16,499 | INFO | [Small-init|BO ] iter= 33 | perf=0.042131 | best=0.041166
+2025-10-11 17:44:16,544 | INFO | [Small-init|RS ] iter= 34 | perf=0.110659 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:16,908 | INFO | [Small-init|BO ] iter= 34 | perf=0.042152 | best=0.041166
+2025-10-11 17:44:16,953 | INFO | [Small-init|RS ] iter= 35 | perf=0.044670 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:17,328 | INFO | [Small-init|BO ] iter= 35 | perf=0.042976 | best=0.041166
+2025-10-11 17:44:17,375 | INFO | [Small-init|RS ] iter= 36 | perf=0.044328 | best=0.042620
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:17,741 | INFO | [Small-init|BO ] iter= 36 | perf=0.044420 | best=0.041166
+2025-10-11 17:44:17,786 | INFO | [Small-init|RS ] iter= 37 | perf=0.041954 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:18,161 | INFO | [Small-init|BO ] iter= 37 | perf=0.042606 | best=0.041166
+2025-10-11 17:44:18,204 | INFO | [Small-init|RS ] iter= 38 | perf=0.152043 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:18,582 | INFO | [Small-init|BO ] iter= 38 | perf=0.054972 | best=0.041166
+2025-10-11 17:44:18,626 | INFO | [Small-init|RS ] iter= 39 | perf=0.045842 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:18,995 | INFO | [Small-init|BO ] iter= 39 | perf=0.044128 | best=0.041166
+2025-10-11 17:44:19,038 | INFO | [Small-init|RS ] iter= 40 | perf=0.095689 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:19,400 | INFO | [Small-init|BO ] iter= 40 | perf=0.041923 | best=0.041166
+2025-10-11 17:44:19,444 | INFO | [Small-init|RS ] iter= 41 | perf=0.049622 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:19,812 | INFO | [Small-init|BO ] iter= 41 | perf=0.042780 | best=0.041166
+2025-10-11 17:44:19,853 | INFO | [Small-init|RS ] iter= 42 | perf=0.062514 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:20,225 | INFO | [Small-init|BO ] iter= 42 | perf=0.042614 | best=0.041166
+2025-10-11 17:44:20,268 | INFO | [Small-init|RS ] iter= 43 | perf=0.061883 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:20,631 | INFO | [Small-init|BO ] iter= 43 | perf=0.042171 | best=0.041166
+2025-10-11 17:44:20,678 | INFO | [Small-init|RS ] iter= 44 | perf=0.053651 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:21,048 | INFO | [Small-init|BO ] iter= 44 | perf=0.042451 | best=0.041166
+2025-10-11 17:44:21,104 | INFO | [Small-init|RS ] iter= 45 | perf=0.049624 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:21,498 | INFO | [Small-init|BO ] iter= 45 | perf=0.044283 | best=0.041166
+2025-10-11 17:44:21,558 | INFO | [Small-init|RS ] iter= 46 | perf=0.057021 | best=0.041954
+/Users/rwikkamilya/MSc/AutoML/automl_ass_1/.venv/lib/python3.13/site-packages/sklearn/gaussian_process/kernels.py:440: ConvergenceWarning: The optimal value found for dimension 0 of parameter k2__noise_level is close to the specified lower bound 1e-06. Decreasing the bound and calling fit again may find a better value.
+  warnings.warn(
+2025-10-11 17:44:21,956 | INFO | [Small-init|BO ] iter= 46 | perf=0.041668 | best=0.041166
+2025-10-11 17:44:22,003 | INFO | [Small-init|RS ] iter= 47 | perf=0.087829 | best=0.041954
+2025-10-11 17:44:22,433 | INFO | [Small-init|BO ] iter= 47 | perf=0.046814 | best=0.041166
+2025-10-11 17:44:22,476 | INFO | [Small-init|RS ] iter= 48 | perf=0.047154 | best=0.041954
+2025-10-11 17:44:22,881 | INFO | [Small-init|BO ] iter= 48 | perf=0.042292 | best=0.041166
+2025-10-11 17:44:22,925 | INFO | [Small-init|RS ] iter= 49 | perf=0.114041 | best=0.041954
+2025-10-11 17:44:23,309 | INFO | [Small-init|BO ] iter= 49 | perf=0.042727 | best=0.041166
+2025-10-11 17:44:23,356 | INFO | [Small-init|RS ] iter= 50 | perf=0.061932 | best=0.041954
+2025-10-11 17:44:23,782 | INFO | [Small-init|BO ] iter= 50 | perf=0.042555 | best=0.041166
+2025-10-11 17:44:23,782 | INFO | [Small-init] First converge epoch: RS=17 | BO=16
+
+Process finished with exit code 0
