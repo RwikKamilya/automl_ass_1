@@ -13,7 +13,7 @@ from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import RBF, WhiteKernel
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
 class SequentialModelBasedOptimization(object):
@@ -34,17 +34,22 @@ class SequentialModelBasedOptimization(object):
 
         self.pre = self.get_model_preprocessor(self.config_space)
 
-        kernel = RBF(length_scale=1.0) + WhiteKernel(noise_level=1e-6)
+        kernel = RBF(length_scale=1.0, length_scale_bounds=(1e-2, 1e3)) \
+                 + WhiteKernel(noise_level=1e-3, noise_level_bounds=(1e-6, 1e1))
+
         gpr = GaussianProcessRegressor(
             kernel=kernel,
-            normalize_y=True,
-            random_state=RANDOM_STATE,
-            alpha=0.0
+            alpha=1e-6,  # tiny jitter added to the diagonal
+            normalize_y=True,  # centers the targets
+            n_restarts_optimizer=3,  # restarts to escape poor local optima
+            random_state=RANDOM_STATE
         )
+
         self.model_pipeline = Pipeline([
-            ("pre", self.pre),
-            ("gpr", gpr),
+            ("scaler", self.pre),
+            ("gp", gpr)
         ])
+
         self.numeric_cols, self.categorical_cols = self.split_hyperparameters(self.config_space)
         self.all_cols = self.numeric_cols + self.categorical_cols
         self.rng = np.random.default_rng(RANDOM_STATE)
@@ -83,10 +88,11 @@ class SequentialModelBasedOptimization(object):
 
         numeric_pipeline = Pipeline([
             ("impute", SimpleImputer(strategy="median")),
+            ("scale", StandardScaler())
         ])
         categorical_pipeline = Pipeline([
             ("impute", SimpleImputer(strategy="most_frequent")),
-            ("onehot", onehot),
+            ("onehot", onehot)
         ])
 
         preprocessor = ColumnTransformer(
@@ -117,15 +123,19 @@ class SequentialModelBasedOptimization(object):
         :param capital_phi: a list of tuples, each tuple being a configuration and the performance (typically,
         error rate)
         """
-        self.R = [(Configuration(self.config_space, values=self.filter_configs(config)), float(performance)) for
-                  config, performance in
-                  capital_phi]
+        self.R = [(Configuration(self.config_space, values=self.filter_configs(config), allow_inactive_with_values=True),
+             float(performance)) for config, performance in capital_phi]
         best_idx = int(np.argmin([performance for _, performance in self.R]))
         self.theta_inc, self.theta_inc_performance = self.R[best_idx]
         self.fit_model()
 
     def get_row(self, config: dict | ConfigSpace.Configuration) -> dict:
-        config_dict = config.get_dictionary() if isinstance(config, Configuration) else dict(config)
+        # config_dict = config.get_dictionary() if isinstance(config, Configuration) else dict(config)
+        if not isinstance(config, Configuration):
+            config = Configuration(self.config_space,
+                                   values=self.filter_configs(config),
+                                   allow_inactive_with_values=True)
+        config_dict = config.get_dictionary()
         return {col: config_dict.get(col, None) for col in self.all_cols}
 
     # TO FIX
@@ -134,7 +144,7 @@ class SequentialModelBasedOptimization(object):
         Fits the internal surrogate model on the complete run list.
         """
         # X = np.vstack([self.config_to_array(config) for config, _ in self.R])
-        rows = [self.get_row(cfg) for cfg, _ in self.R]
+        rows = [self.get_row(config) for config, _ in self.R]
         X = pd.DataFrame(rows, columns=self.all_cols)
         y = np.asarray([performance for _, performance in self.R], dtype=float)
         self.model_pipeline.fit(X, y)
@@ -196,11 +206,11 @@ class SequentialModelBasedOptimization(object):
 
         :param run: A tuple (configuration, performance) where performance is error rate
         """
-        config = Configuration(self.config_space, values=self.filter_configs(run[0]))
+        config = Configuration(self.config_space, values=self.filter_configs(run[0]), allow_inactive_with_values=True)
         performance = float(run[1])
         self.R.append((config, performance))
 
-        if performance < self.theta_inc_performance:
+        if self.theta_inc_performance is None or performance < self.theta_inc_performance:
             self.theta_inc = config
             self.theta_inc_performance = performance
 
