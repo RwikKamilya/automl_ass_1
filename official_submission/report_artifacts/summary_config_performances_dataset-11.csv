@@ -1,0 +1,4 @@
+method,AUBC (lower=better),iters@95%,best_final_score,best_config
+Random Search,3.6465015376499195,100,0.03521069954537691,"{'metric': np.str_('cosine'), 'n_neighbors': 13, 'pp@cat_encoder': np.str_('ordinal'), 'pp@decomposition': np.str_('none'), 'pp@featuregen': np.str_('none'), 'pp@featureselector': np.str_('none')}"
+SMBO (Expected Improvement),3.0755849148163668,100,0.030265947105463233,"{'metric': np.str_('cosine'), 'n_neighbors': 11, 'pp@cat_encoder': np.str_('onehot'), 'pp@decomposition': np.str_('kernel_pca'), 'pp@featuregen': np.str_('poly'), 'pp@featureselector': np.str_('selectp')}"
+Successive Halving,4.009195690196896,68,0.04030511761237564,"{'metric': np.str_('cosine'), 'n_neighbors': 22, 'pp@cat_encoder': np.str_('onehot'), 'pp@decomposition': np.str_('agglomerator'), 'pp@featuregen': np.str_('poly'), 'pp@featureselector': np.str_('selectp')}"

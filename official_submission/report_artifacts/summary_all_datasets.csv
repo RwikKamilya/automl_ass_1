@@ -1,0 +1,10 @@
+dataset,method,AUBC,iters@95%,best_final_score
+config_performances_dataset-11,Random Search,3.6465015376499195,100,0.03521069954537691
+config_performances_dataset-11,SMBO (Expected Improvement),3.0755849148163668,100,0.030265947105463233
+config_performances_dataset-11,Successive Halving,4.009195690196896,68,0.04030511761237564
+config_performances_dataset-1457,Random Search,55.50499377425033,100,0.5599587901234558
+config_performances_dataset-1457,SMBO (Expected Improvement),63.36027015071342,100,0.6266704708994705
+config_performances_dataset-1457,Successive Halving,62.81109526523161,71,0.6326172643899305
+config_performances_dataset-6,Random Search,4.22196702670154,100,0.042468030735930744
+config_performances_dataset-6,SMBO (Expected Improvement),4.30954562255291,100,0.0427781177248677
+config_performances_dataset-6,Successive Halving,4.219111765305062,78,0.04232083809523805
